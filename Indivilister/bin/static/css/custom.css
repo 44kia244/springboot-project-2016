@@ -4,15 +4,11 @@ html, body {
 }
 
 body {
-    background-color: #f4fff3;
-}
-
-a {
-    color: #5E8728;
+    background-color: #565656;
 }
 
 a:hover, a:focus {
-    color: #6d9c2d;
+    color: #a228c1;
 }
 
 main {
@@ -49,11 +45,7 @@ textarea {
     color: #cdbfe3;
     text-align: center;
     text-shadow: 0 1px 0 rgba(0, 0, 0, .1);
-    background-color: #92D13D;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#92D13D), to(#49691F));
-    background-image: -webkit-linear-gradient(top, #92D13D 0, #49691F 100%);
-    background-image: -o-linear-gradient(top, #92D13D 0, #49691F 100%);
-    background-image: linear-gradient(to bottom, #92D13D 0, #49691F 100%);
+    background-color: #78238e;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#92D13D', endColorstr='#49691F', GradientType=0);
     background-repeat: repeat-x;
     padding-top: 60px;
@@ -86,7 +78,6 @@ textarea {
     border-radius: 3px;
     padding: 15px;
     box-shadow: 5px 3px 3px 0 rgba(0, 0, 0, 0.26);
-    /*height: 280px;*/
     margin: 5px;
     position: relative;
 }
@@ -139,7 +130,7 @@ textarea {
 }
 
 .materialCard.success {
-    border-top: 5px solid #8CC04D;
+    border-top: 5px solid #a228c1;
 }
 
 .materialCard.warning {
@@ -197,4 +188,67 @@ textarea {
     -ms-transform: skew(8deg) rotate(3deg);
     -o-transform: skew(8deg) rotate(3deg);
     transform: skew(8deg) rotate(3deg);
+}
+
+/* ############## Modified by Apiwith Potisuk ############## */
+
+.header-custom {
+	animation: slideup .5s ease-in-out .5s; 
+}
+
+.header-custom > .container {
+	opacity: 0;
+	animation: fadein .5s ease-in-out .5s forwards; 
+}
+
+.navbar { border-radius: 0; }
+
+.navbar-brand { color: #bdbdbd; }
+
+.btn-success {
+	background-color: #a228c1;
+    border-color: #6d2480;
+}
+
+.btn-success:hover, .btn-success:active, .btn-success:focus {
+	background-color: #6d2480 !important;
+    border-color: #6d6d6d !important;
+}
+
+.btn-primary {
+	background-color: #615b94;
+    border-color: #484565;
+}
+
+.btn-success .badge { color: #337ab7; }
+
+.materialCard {
+	animation: big-crunch 0.5s ease-in-out 0s;
+}
+
+footer {
+	background: #404040;
+	color: #ccc;
+    box-shadow: inset #000 0 3px 10px;
+}
+
+@keyframes big-crunch {
+	from {
+		margin: 50px;
+		opacity: 0;
+	}
+	to {
+		margin: 5px;
+		opacity: 1;
+	}
+}
+
+@keyframes slideup {
+	from { padding: 100px 0 20px; }
+	to { padding: 60px 0; }
+}
+
+@keyframes fadein {
+	from { opacity: 0; }
+	to { opacity: 1; }
 }
