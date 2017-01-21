@@ -8,5 +8,7 @@ public class IndivilisterApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(IndivilisterApplication.class, args);
+		
+		// This is just comment
 	}
 }
