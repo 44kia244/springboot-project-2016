@@ -9,6 +9,6 @@ public class TaskForm {
 	private int id;
 	@NotEmpty
 	private String name;
-	@NotEmpty
+
 	private int projectId;
 }
