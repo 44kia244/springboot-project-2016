@@ -4,8 +4,11 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+import javax.transaction.TransactionManager;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.arms.app.project.TaskRepository;
 import com.arms.app.task.TaskForm;
@@ -49,5 +52,9 @@ public class TaskService {
 
 	public void delete(int taskId) {
 		taskRepository.delete(taskId);
+	}
+	
+	public void deleteByProject(int projectId) {
+		taskRepository.deleteByProjectId(projectId);
 	}
 }

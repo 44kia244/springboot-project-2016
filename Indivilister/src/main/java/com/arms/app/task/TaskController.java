@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.arms.domain.entity.Project;
+import com.arms.domain.service.ProjectService;
 import com.arms.domain.service.TaskService;
 
 @Controller
@@ -20,6 +22,9 @@ import com.arms.domain.service.TaskService;
 public class TaskController {
 	@Autowired
 	TaskService taskService;
+	
+	@Autowired
+	ProjectService projectService;
 
 	@RequestMapping(value = "list/{project_id}", method = RequestMethod.GET)
 	public String list(@PathVariable("project_id") int projectId, Model model) {
@@ -42,10 +47,16 @@ public class TaskController {
 		taskService.update4Status(taskId, status);
 		return "redirect:/task/list/" + taskService.findProjectByTaskId(taskId).getId();
 	}
-
+	
 	@RequestMapping(value = "delete/{project_id}/{task_id}", method = RequestMethod.GET)
 	public String delete(@PathVariable("project_id") int projectId, @PathVariable("task_id") int taskId) {
 		taskService.delete(taskId);
+		return "redirect:/task/list/" + projectId;
+	}
+	
+	@RequestMapping(value = "delete/{project_id}/alltask", method = RequestMethod.GET)
+	public String deleteAll(@PathVariable("project_id") int projectId) {
+		taskService.deleteByProject(projectId);
 		return "redirect:/task/list/" + projectId;
 	}
 }

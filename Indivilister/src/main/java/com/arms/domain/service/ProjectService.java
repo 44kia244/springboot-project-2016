@@ -42,6 +42,10 @@ public class ProjectService {
 		Project project = projectRepository.findOne(id);
 		return new ProjectForm(project.getId(), project.getName());
 	}
+	
+	public Project find(int id) {
+		return projectRepository.findOne(id);
+	}
 
 	public void update(ProjectForm projectForm) {
 		Project project = projectRepository.findOne(projectForm.getId());
